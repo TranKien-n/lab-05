@@ -98,26 +98,22 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
     private void addNewCity(City city) {
-        // 1️⃣ Add to local list (so it appears in the ListView)
         cityDataList.add(city);
         cityArrayAdapter.notifyDataSetChanged();
 
-        // 2️⃣ Add to Firestore collection (for persistent storage)
         HashMap<String, String> data = new HashMap<>();
         data.put("Province", city.getProvinceName());
 
-        // Use city name as the document ID
         citiesRef.document(city.getCityName()).set(data);
     }
 
     private void deleteCity(City city) {
-        // 1️⃣ Remove from local list
+        // delete from local list
         cityDataList.remove(city);
         cityArrayAdapter.notifyDataSetChanged();
 
-        // 2️⃣ Remove from Firestore collection
+        // delete from Firestore collection
         citiesRef.document(city.getCityName()).delete();
     }
 }

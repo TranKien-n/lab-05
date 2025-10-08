@@ -1,27 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:padding="6dp">
-
-    <Button
-        android:id="@+id/buttonAddCity"
-        android:text="Add City"
-        android:textSize="20sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="10dp"/>
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <ListView
-        android:id="@+id/listviewCities"
+        android:id="@+id/city_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </ListView>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAddCity" />
+        android:orientation="horizontal"
+        >
+        <EditText
+            android:id="@+id/city_name_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="7"/>
+        <EditText
+            android:id="@+id/province_name_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="7" />
+        <Button
+            android:id="@+id/add_city_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add City"/>
+    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
+

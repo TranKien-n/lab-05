@@ -22,7 +22,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivityStarter extends AppCompatActivity {
     ListView cityList;
     ArrayList<City> cityDataList;
     CityArrayAdapter cityArrayAdapter;
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             City cityToDelete = cityDataList.get(position); // Get the city to delete by position
             // Show a confirmation dialog before deleting (AlertDialog)
             new AlertDialog.Builder(this)
-                    .setTitle("YOU ARE ABOUT TO DELETE A CITY!")
+                    .setTitle("Delete cityToDelete")
                     .setMessage("Delete " + cityToDelete.getCityName() + ", " + cityToDelete.getProvinceName() + "?")
                     .setPositiveButton("Delete", (d, w) -> deleteCity(cityToDelete))
                     .setNegativeButton("Cancel", null)

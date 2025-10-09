@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
+import com.example.listycity5.R;
+
 import java.util.Objects;
 
 public class CityDialogFragment extends DialogFragment {
